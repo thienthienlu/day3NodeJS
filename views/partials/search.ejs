@@ -1,0 +1,95 @@
+<%- include('../partials/head'); %>
+
+  <body class="container">
+    <header>
+      <%- include('../partials/header') %>
+    </header>
+
+    <!-- FORM_01 -->
+    <form class="d-flex input-group w-auto ms-lg-3 my-3 my-lg-0" method="GET">
+      <input type="text" class="form-control" placeholder="First_Name" type="text" name="fn">
+      <input type="text" class="form-control" placeholder="Last_Name" type="text" name="ln">
+
+      <!-- type="text"; name="q"; method="POST"-->
+      <input type="search" class="form-control" placeholder="Search" aria-label="Search" type="text" name="q" />
+
+      <!-- button type="submit" -->
+      <button class="btn btn-outline-white" type="submit" data-mdb-ripple-color="dark">
+        Search
+      </button>
+    </form>
+
+    <b> <code> <%= tagline %></code></b>
+    <ul>
+      <% inforForm01.forEach((inforForm01)=> { %>
+        <li>
+          Search: <strong>
+            <%= inforForm01.s %>
+          </strong>
+        </li>
+        <li>
+          First name: <strong>
+            <%= inforForm01.fn %>
+          </strong>
+        </li>
+        <li>
+          Last name: <strong>
+            <%= inforForm01.ln %>
+          </strong>
+        </li>
+        <% }); %>
+    </ul>
+
+    <section class="intro">
+      <div class="mask d-flex align-items-center h-100" style="background-color: #D6D6D6;">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div class="card" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center">
+                  <i class="fas fa-user-astronaut fa-3x my-5"></i>
+                  <div class="my-md-5 pb-5">
+                    <form action="" method="POST">
+                      <div class="form-outline mb-4">
+                        <input type="text" id="typeID" class="form-control form-control-lg" placeholder="ID"
+                          name="id" required/>
+                      </div>
+                      <div class="form-outline mb-4">
+                        <input type="text" id="typePosition" class="form-control form-control-lg" placeholder="Position"
+                          name="ps" />
+                      </div>
+                      <div class="form-outline mb-4">
+                        <input type="tel" id="typeContact" class="form-control form-control-lg" placeholder="Contact [ format: 081-332-6248 ]"
+                          name="ct" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required/>
+                      </div>
+                      <div class="form-outline mb-4">
+                        <input type="number" id="typeAge" class="form-control form-control-lg" placeholder="Age"
+                          name="ag" min="18" max="50" step="18" required />
+                      </div>
+                      <div class="form-outline mb-4">
+                        <input type="text" id="typeAddress" class="form-control form-control-lg" placeholder="Address"
+                          name="ad" />
+                      </div>
+                      <div class="form-outline mb-4">
+                        <input type="number" id="typeSalary" class="form-control form-control-lg" placeholder="Salary"
+                          name="sl" min="0.00" max="100000.000" step="0.01" required/>
+                      </div>
+                      <button class="btn btn-primary btn-lg btn-rounded gradient-custom text-body px-5"
+                        type="submit">GO</button>
+                  </div>
+                  <div>
+                    <p class="mb-0">Don't have an account? <a href="#!" class="text-body fw-bold">Sign Up</a></p>
+                  </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <%- include('../partials/footer') %>
+    </footer>
+  </body>
+  <!-- Search form -->

@@ -1,0 +1,106 @@
+<%- include('../partials/head'); %>
+
+<body class="container">
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+    <h1 id="Test" class="text-center">
+        <code> <%= tagline %> </code>
+      </h1>
+      <section class="intro">
+        <div class="bg-image h-100" style="background-image: url(https://mdbootstrap.com/img/Photos/new-templates/glassmorphism-article/img7.jpg);">
+          <div class="mask d-flex align-items-center h-100">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-12">
+                  <div class="card mask-custom">
+                    <div class="card-body">
+                      <div class="table-responsive">
+                        <table id="deTable" class="table table-borderless text-white mb-0">
+                          <thead>
+                            <tr>
+                              <th scope="col">ID EMPLOYEES </th>
+                              <th scope="col">POSITION</th>
+                              <th scope="col">CONTACTS</th>
+                              <th scope="col">AGE</th>
+                              <th scope="col">ADDRESS</th>
+                              <th scope="col">SALARY</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">Jena Gaines</th>
+                              <td>Office Manager</td>
+                              <td>jgaines75@example.com</td>
+                              <td>30</td>
+                              <td>London</td>
+                              <td>$90,560</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Quinn Flynn</th>
+                              <td>Support Lead</td>
+                              <td>qflyn09@example.com</td>
+                              <td>22</td>
+                              <td>Edinburgh</td>
+                              <td>$342,000</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Charde Marshall</th>
+                              <td>Regional Director</td>
+                              <td>cmarshall28@example.com</td>
+                              <td>36</td>
+                              <td>San Francisco</td>
+                              <td>$470,600</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Haley Kennedy</th>
+                              <td>Senior Marketing Designer</td>
+                              <td>hkennedy63@example.com</td>
+                              <td>43</td>
+                              <td>London</td>
+                              <td>$313,500</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Tatyana Fitzpatrick</th>
+                              <td>Regional Director</td>
+                              <td>tfitzpatrick00@example.com</td>
+                              <td>19</td>
+                              <td>Warsaw</td>
+                              <td>$385,750</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+
+<script>
+  // $('#Test').hide();
+  const myarray = [];
+  $("#deTable tbody").append(`
+  <% inforForm02_result.forEach((inforForm02_result) => { %>
+                            <tr>
+                              <th scope="row"><code> <%= inforForm02_result.ID %></code></th>
+                              <td><%= inforForm02_result.Position %> </td>
+                              <td><%= inforForm02_result.Contact %> </td>
+                              <td><%= inforForm02_result.Age %> </td>
+                              <td><%= inforForm02_result.Address %></td>  
+                              <td>$<%= inforForm02_result.Salary %></td>
+                            </tr>
+                            <% }); %>
+  `);
+    
+  
+ </script>
+    
+

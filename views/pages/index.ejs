@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>EJS</h1>
+            <p>Welcome to template using EJS</p>
+            <hr>
+            <h2> Variable</h2>          
+            <p><%= tagline %></p>
+            <hr>
+            <ul>
+                <!-- To loop over data, you can use .forEach. <%= %> -->
+                <% people.forEach((people) => { %> 
+                    <li>
+                        <strong> <%= people.name %> </strong> is working in <%= people.department %> department, born <%= people.birth_year %>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+    </main>
+    
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+</html>
